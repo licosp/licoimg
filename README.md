@@ -2,6 +2,10 @@
 
 A premium, client-side web-based image viewer built with Vite and Vanilla JavaScript.
 
+## 🌐 Live Demo
+
+**GitHub Pages**: [https://licosp.github.io/licoimg/](https://licosp.github.io/licoimg/)
+
 ## Features
 
 - **Drag & Drop**: Easily load images by dragging them onto the page.
@@ -22,3 +26,9 @@ A premium, client-side web-based image viewer built with Vite and Vanilla JavaSc
     ```
 
 3.  Open your browser at the URL shown in the terminal.
+
+## 👤 Developer
+
+- **Name**: licosp
+- **GitHub**: [https://github.com/licosp](https://github.com/licosp)
+- **X (Twitter)**: [https://x.com/licospx](https://x.com/licospx)
