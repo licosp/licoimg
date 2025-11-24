@@ -1,41 +1,36 @@
 ---
-description: Create a new prompt draft
+description: Create a new prompt draft with a timestamped filename
 ---
 
-# Create Prompt Draft
+# Create Prompt Draft Workflow
 
-This workflow creates a new prompt draft file in `.agent/.draft/` with timestamp-based naming.
+## Purpose
+Generate a new Markdown draft file in `.agent/.draft/` for writing AI instructions.
 
 ## Steps
 
-1. Create the `.agent/.draft/` directory if it doesn't exist:
+1. **Create Directory** (if missing)
+   ```bash
+   mkdir -p .agent/.draft
+   ```
 
-```bash
-mkdir -p .agent/.draft
-```
+2. **Generate File**
+   Run the following to create a timestamped draft:
+   ```bash
+   cat > .agent/.draft/draft_$(date -Iseconds).md << 'EOF'
+   ---
+   date: $(date -Iseconds)
+   user: $(whoami)
+   ---
 
-// turbo 2. Create a new draft file with the current timestamp:
+   ## Prompt
+   [Enter your instructions for Ai here]
 
-```bash
-cat > .agent/.draft/draft_$(date -Iseconds).md << EOF
----
-date: $(date -Iseconds)
-user: $(whoami)
----
+   ## Notes
+   [Optional context, background, or expected results]
+   EOF
+   ```
 
-## Prompt
-
-[Write your instruction to Ai here]
-
-## Additional Notes
-
-[Background information, expected results, context, etc.]
-EOF
-```
-
-3. The draft file will be created at: `.agent/.draft/draft_YYYY-MM-DDTHH:MM:SS+HH:MM.md`
-
-## File Naming Convention
-
-- Format: `draft_YYYY-MM-DDTHH:MM:SS+HH:MM.md` (ISO 8601)
-- Example: `draft_2025-11-24T17:37:42+09:00.md`
+## Output
+- **Path**: `.agent/.draft/draft_YYYY-MM-DDTHH:MM:SS+HH:MM.md`
+- **Usage**: Edit the `## Prompt` section to instruct the agent.

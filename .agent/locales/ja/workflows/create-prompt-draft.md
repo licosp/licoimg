@@ -1,41 +1,36 @@
 ---
-description: 新しいプロンプトドラフトを作成
+description: タイムスタンプ付きのファイル名で新しいプロンプトドラフトを作成する
 ---
 
-# プロンプトドラフト作成
+# プロンプトドラフト作成ワークフロー
 
-このワークフローは、タイムスタンプベースの命名規則で `.agent/.draft/` に新しいプロンプトドラフトファイルを作成します。
+## 目的
+AIへの指示を書くための新しいMarkdownドラフトファイルを `.agent/.draft/` に生成します。
 
-## ステップ
+## 手順
 
-1. `.agent/.draft/` ディレクトリが存在しない場合は作成:
+1. **ディレクトリ作成**（存在しない場合）
+   ```bash
+   mkdir -p .agent/.draft
+   ```
 
-```bash
-mkdir -p .agent/.draft
-```
+2. **ファイル生成**
+   以下を実行してタイムスタンプ付きのドラフトを作成します：
+   ```bash
+   cat > .agent/.draft/draft_$(date -Iseconds).md << 'EOF'
+   ---
+   date: $(date -Iseconds)
+   user: $(whoami)
+   ---
 
-// turbo 2. 現在のタイムスタンプで新しいドラフトファイルを作成:
+   ## Prompt
+   [ここにAiへの指示を入力してください]
 
-```bash
-cat > .agent/.draft/draft_$(date -Iseconds).md << EOF
----
-date: $(date -Iseconds)
-user: $(whoami)
----
+   ## Notes
+   [任意のコンテキスト、背景、または期待される結果]
+   EOF
+   ```
 
-## Prompt
-
-[Ai への指示をここに記述]
-
-## Additional Notes
-
-[背景情報、期待される結果、コンテキストなど]
-EOF
-```
-
-3. ドラフトファイルは以下の場所に作成されます: `.agent/.draft/draft_YYYY-MM-DDTHH:MM:SS+HH:MM.md`
-
-## ファイル命名規則
-
-- フォーマット: `draft_YYYY-MM-DDTHH:MM:SS+HH:MM.md` (ISO 8601)
-- 例: `draft_2025-11-24T17:37:42+09:00.md`
+## 出力
+- **パス**: `.agent/.draft/draft_YYYY-MM-DDTHH:MM:SS+HH:MM.md`
+- **使用法**: `## Prompt` セクションを編集してエージェントに指示します。

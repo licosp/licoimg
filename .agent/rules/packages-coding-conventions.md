@@ -1,12 +1,18 @@
-# Package Common Coding Conventions
+# Package Coding Conventions
 
-## Coding Conventions
+## Purpose
+Establish technical standards and project-specific rules for the codebase.
 
+## Tech Stack
 - **Framework**: Vite + Vanilla JavaScript
-- **Style**: Modern and premium design using CSS Variables
-- **Deployment**: GitHub Pages (`docs` folder structure)
-- **Source Directory**: `src/` (main logic is `src/main.js`)
+- **Styling**: Modern CSS (Variables, Flexbox/Grid)
+- **Deployment**: GitHub Pages (`docs/` directory)
 
-## Project-Specific Rules
+## Conventions
+- **Source**: `src/` (Entry point: `src/main.js`)
+- **Design**: Premium, modern aesthetic (Glassmorphism, Dark Mode).
+- **Architecture**: Client-side only (No server-side logic).
 
-- **Client-side Operation**: Assume it operates only on the client side, performing no server-side processing.
+## Rules
+- **No Placeholders**: Use `generate_image` for assets; do not use placeholder text/images.
+- **SEO**: Include Title, Meta Description, Semantic HTML.
