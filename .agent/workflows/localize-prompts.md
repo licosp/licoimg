@@ -1,56 +1,42 @@
 ---
-description: Translate prompt files from English to Japanese and organize them in locale-specific directories
+description: Translate English prompt files to Japanese and store them in a localization directory
 ---
 
 # Localize Prompts Workflow
 
-Translate prompt files in `.agent/rules` and `.agent/workflows` directories from English to Japanese.
+This workflow translates prompt files located in `.agent/rules` and `.agent/workflows` from English to Japanese, storing the translated files under `.agent/locales/ja/`.
 
-## Objective
+## Goal
 
-Create Japanese translations of agent prompt files and organize them in a multilingual directory structure.
+- Provide Japanese versions of the agent’s prompts for localized documentation.
+- Establish a directory structure that easily supports additional languages in the future.
 
 ## Target Files
 
-### `.agent/rules` (2 files)
-
-- `agent-code-of-conduct.md` - Agent behavior guidelines
-- `packages-coding-conventions.md` - Package coding conventions
-
-### `.agent/workflows` (3 files)
-
-- `commit.md` - Commit workflow
-- `create-prompt-draft.md` - Prompt draft creation workflow
+- **All `.md` files** in the repository (both rules and workflows).
 
 ## Output Directory
 
-Translated files will be saved under `.agent/locales/ja/`:
+Translated files are saved to:
 
-- `.agent/locales/ja/rules/` - Japanese versions of rule files
-- `.agent/locales/ja/workflows/` - Japanese versions of workflow files
+- `.agent/locales/ja/rules/` – Japanese versions of rule files
+- `.agent/locales/ja/workflows/` – Japanese versions of workflow files
 
-This structure makes it easy to add other languages (e.g., en, zh) in the future.
+This layout makes it simple to add other language directories such as `en/` or `zh/` later.
 
 ## Translation Guidelines
 
 1. **Technical Terms**
-   - Keep common technical terms in English (e.g., commit, workflow, git)
-   - Use katakana when appropriate (e.g., ワークフロー for workflow)
-
+   - Keep terms like `commit`, `workflow`, `git` in Katakana (e.g., コミット, ワークフロー) when appropriate.
 2. **Structure Preservation**
-   - Translate YAML frontmatter (content between `---` markers)
-   - Preserve markdown structure (headings, lists, code blocks)
-   - Do not modify command examples (e.g., `git status`)
+   - Preserve the YAML front‑matter (`---` block) and all Markdown headings, lists, and code blocks.
+   - Do **not** modify command examples (e.g., `git status`).
+3. **Tone**
+   - Use a polite, explanatory style; keep bullet points concise.
 
-3. **Writing Style**
-   - Use polite, explanatory tone
-   - Keep bullet points and instructions concise
-
-## Task Steps
+## Steps
 
 ### Step 1: Create Directory Structure
-
-Create the necessary locale directories:
 
 ```bash
 mkdir -p .agent/locales/ja/rules
@@ -59,28 +45,17 @@ mkdir -p .agent/locales/ja/workflows
 
 ### Step 2: Translate Rule Files
 
-Translate each file in `.agent/rules/` and save to `.agent/locales/ja/rules/`:
-
 - `agent-code-of-conduct.md` → `.agent/locales/ja/rules/agent-code-of-conduct.md`
 - `packages-coding-conventions.md` → `.agent/locales/ja/rules/packages-coding-conventions.md`
 
 ### Step 3: Translate Workflow Files
 
-Translate each file in `.agent/workflows/` and save to `.agent/locales/ja/workflows/`:
-
 - `commit.md` → `.agent/locales/ja/workflows/commit.md`
 - `create-prompt-draft.md` → `.agent/locales/ja/workflows/create-prompt-draft.md`
+- `localize-prompts.md` → `.agent/locales/ja/workflows/localize-prompts.md`
 
 ### Step 4: Verify Translations
 
-**Manual Verification**:
-
-- Confirm translations are accurate
-- Verify markdown formatting is preserved
-- Ensure command examples and code blocks are unchanged
-
-**Actions**:
-
-- Review each translated file
-- Check for consistency in terminology
-- Validate file structure matches original
+- Ensure translations are accurate.
+- Check that Markdown formatting is preserved.
+- Confirm that command examples and code blocks remain unchanged.

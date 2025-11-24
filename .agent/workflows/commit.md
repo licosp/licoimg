@@ -1,12 +1,12 @@
 ---
-description: Identify repository changes and organize them into logical commits
+description: Identify repository changes and consolidate them into logical commits
 ---
 
 # Commit Workflow
 
-## Objective
+## Purpose
 
-Identify repository changes and organize them into logical commits.
+Identify repository changes and consolidate them into logical commits.
 
 ## Task Steps
 
@@ -14,48 +14,56 @@ Identify repository changes and organize them into logical commits.
 
 Identify and analyze all uncommitted changes in the repository.
 
-**Actions**:
+**Actions:**
 
-- Run `git status` to see modified, added, and deleted files
-- Run `git diff` to review the actual changes
-- Categorize changes by their purpose or component
+- Run `git status` to see modified, added, or deleted files.
+- Run `git diff` to view the actual changes.
+- Classify changes by purpose or component.
 
-**Output**:
+**Outputs:**
 
-- Create a list grouping related changes together
-- Each group should represent a logical, atomic commit
-- List the files affected in each group
+- Create a list grouping related changes.
+- Each group represents an atomic logical commit.
+- List the files affected by each group.
 
 ### Step 2: Create Commits
 
 Create individual commits for each logical group of changes.
 
-**Requirements**:
+**Requirements:**
 
-- Use `git add` to stage files for each commit
-- Write clear, descriptive commit messages in English
-- Follow commit message best practices:
-  - Use imperative mood (e.g., "Add feature" not "Added feature")
-  - Keep the first line under 50 characters
-  - Provide additional context in the body if needed
-  - Reference issue numbers if applicable
+- Use `git add` to stage files for each commit.
+- Write clear, descriptive commit messages in English.
+- Follow commit‑message best practices:
+  - Prefix the message with a type identifier:
+    - "Feat:" for new features
+    - "Fix:" for bug fixes
+    - "Docs:" for documentation changes
+    - "Style:" for code style changes
+    - "Refactor:" for code restructuring
+    - "Rest:" for adding or modifying tests
+    - "Chore:" for build process or auxiliary tool changes
+  - Use imperative mood (e.g., "Add feature" not "Added feature").
+  - Keep the first line under 50 characters.
+  - Provide additional context in the body when necessary.
+  - Reference issue numbers when applicable.
 
-**Process**:
+**Process:**
 
-1. Stage related files together: `git add <files>`
-2. Create commit with descriptive message: `git commit -m "message"`
-3. Repeat for each logical group of changes
+1. Stage related files: `git add <files>`
+2. Commit with a descriptive message: `git commit -m "<message>"`
+3. Repeat for each logical group.
 
 ### Step 3: Review
 
 Review the created commits.
 
-**Actions**:
+**Actions:**
 
-- Run `git log` to review commit history
-- Verify each commit is atomic and well-described
+- Run `git log` to inspect commit history.
+- Verify each commit is atomic and properly described.
 
-**Verification**:
+**Verification:**
 
-- Confirm all changes have been committed
-- Ensure commit messages are clear and in English
+- Ensure all changes are committed.
+- Confirm commit messages are clear and in English.
