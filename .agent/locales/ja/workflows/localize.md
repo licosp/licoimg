@@ -32,9 +32,6 @@ mkdir -p .agent/{rules,workflows} .agent/locales/ja/{rules,workflows}
 **ソース**: `.agent/locales/ja/`  
 **宛先**: `.agent/rules/**/*.md` と `.agent/workflows/*.md`
 
-> [!WARNING]
-> これは既存の英語ファイルを上書きします。実行前に変更をコミットしてください。
-
 **翻訳と上書き**:
 - **Rules**: `.agent/locales/ja/rules/**/*.md` → `.agent/rules/**/*.md`
 - **Workflows**: `.agent/locales/ja/workflows/*.md` → `.agent/workflows/*.md`

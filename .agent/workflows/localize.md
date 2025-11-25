@@ -32,9 +32,6 @@ mkdir -p .agent/{rules,workflows} .agent/locales/ja/{rules,workflows}
 **Source**: `.agent/locales/ja/`  
 **Destination**: `.agent/rules/**/*.md` and `.agent/workflows/*.md`
 
-> [!WARNING]
-> This overwrites existing English files. Commit changes before running.
-
 **Translate & Overwrite**:
 - **Rules**: `.agent/locales/ja/rules/**/*.md` → `.agent/rules/**/*.md`
 - **Workflows**: `.agent/locales/ja/workflows/*.md` → `.agent/workflows/*.md`
