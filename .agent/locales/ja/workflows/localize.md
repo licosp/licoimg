@@ -36,15 +36,6 @@ mkdir -p .agent/{rules,workflows} .agent/locales/ja/{rules,workflows}
   - ソースファイルが宛先ファイルより新しい、または
   - 宛先ファイルが存在しない
 
-**例**:
-```bash
-# EN → JA の場合
-if [[ ! -f ".agent/locales/ja/workflows/commit.md" ]] || 
-   [[ ".agent/workflows/commit.md" -nt ".agent/locales/ja/workflows/commit.md" ]]; then
-  # 翻訳が必要
-fi
-```
-
 ## 検証
 
 翻訳後、以下を確認します:

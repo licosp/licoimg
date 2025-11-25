@@ -36,15 +36,6 @@ To avoid redundant translation work, only translate files that have been updated
   - Source file is newer than destination file, OR
   - Destination file does not exist
 
-**Example**:
-```bash
-# For EN → JA
-if [[ ! -f ".agent/locales/ja/workflows/commit.md" ]] || 
-   [[ ".agent/workflows/commit.md" -nt ".agent/locales/ja/workflows/commit.md" ]]; then
-  # Translation needed
-fi
-```
-
 ## Verification
 
 After translation, verify the following:
