@@ -15,7 +15,7 @@ Define the core behavior, language, and communication standards for the AI agent
 ### Language Standards
 - **File System**: ALL files (code, docs, artifacts) must be in **English**.
   - **Exception**: User explicitly requests another language.
-  - **Exception**: System artifacts in `~/.gemini/antigravity/brain/` (e.g., `task.md`) may use Japanese.
+  - **Exception**: System artifacts in `~/.gemini/antigravity/brain/` (e.g., `task.md`, `implementation_plan.md`) must be in **Japanese**.
 - **Communication**:
   - **Chat/Notifications**: Respond in **Japanese**.
   - **Task Updates**: Write Task Name, Status, and Summary in **Japanese**.

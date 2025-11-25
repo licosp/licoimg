@@ -2,14 +2,14 @@
 description: 英語のプロンプトファイルを日本語に翻訳する
 ---
 
-# ローカライズプロンプトワークフロー
+# プロンプトのローカライズワークフロー
 
 ## 目的
-`.agent/rules` と `.agent/workflows` にある英語のプロンプトファイル（`.md`）を日本語に翻訳し、`.agent/locales/ja/` に保存します。
+`.agent/rules` および `.agent/workflows` 内の英語のプロンプトファイル（`.md`）を日本語に翻訳し、`.agent/locales/ja/` に保存します。
 
 ## 手順
 
-### 1. ディレクトリ作成
+### 1. ディレクトリの作成
 ターゲットディレクトリが存在することを確認します：
 ```bash
 mkdir -p .agent/locales/ja/rules
@@ -23,9 +23,9 @@ mkdir -p .agent/locales/ja/workflows
 - **ワークフロー**: `.agent/workflows/*.md` → `.agent/locales/ja/workflows/*.md`
 
 ### 3. ガイドライン
-- **用語**: 技術用語（例：`commit`, `workflow`, `git`）はカタカナまたは英語のままにします。
-- **構造**: YAMLフロントマター、見出し、コードブロックを保持します。
-- **トーン**: 丁寧な日本語（です・ます調）。
+- **用語**: 技術用語（例：`commit`、`workflow`、`git`）はカタカナまたは英語のままにします。
+- **構造**: YAMLフロントマター、見出し、コードブロックは保持します。
+- **口調**: 丁寧な日本語（です・ます調）を使用します。
 
 ### 4. 検証
 - 翻訳の正確さとMarkdownのフォーマットを確認します。

@@ -9,13 +9,13 @@ AIへの指示を書くための新しいMarkdownドラフトファイルを `.a
 
 ## 手順
 
-1. **ディレクトリ作成**（存在しない場合）
+1. **ディレクトリの作成**（存在しない場合）
    ```bash
    mkdir -p .agent/.draft
    ```
 
-2. **ファイル生成**
-   以下を実行して日付ベースのドラフトを作成します：
+2. **ファイルの生成**
+   以下を実行して、日付付きのドラフトを作成します：
    ```bash
    cat > .agent/.draft/draft_$(date +%Y-%m-%d).md << 'EOF'
    ---
@@ -24,7 +24,7 @@ AIへの指示を書くための新しいMarkdownドラフトファイルを `.a
    ---
 
    ## Prompt
-   [ここにAiへの指示を入力してください]
+   [Enter your instructions for Ai here]
 
 
    EOF
