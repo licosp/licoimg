@@ -1,5 +1,5 @@
 ---
-description: タイムスタンプ付きのファイル名で新しいプロンプトドラフトを作成する
+description: 日付ベースのファイル名で新しいプロンプトドラフトを作成する
 ---
 
 # プロンプトドラフト作成ワークフロー
@@ -15,9 +15,9 @@ AIへの指示を書くための新しいMarkdownドラフトファイルを `.a
    ```
 
 2. **ファイル生成**
-   以下を実行してタイムスタンプ付きのドラフトを作成します：
+   以下を実行して日付ベースのドラフトを作成します：
    ```bash
-   cat > .agent/.draft/draft_$(date -Iseconds).md << 'EOF'
+   cat > .agent/.draft/draft_$(date +%Y-%m-%d).md << 'EOF'
    ---
    date: $(date -Iseconds)
    user: $(whoami)
@@ -32,5 +32,5 @@ AIへの指示を書くための新しいMarkdownドラフトファイルを `.a
    ```
 
 ## 出力
-- **パス**: `.agent/.draft/draft_YYYY-MM-DDTHH:MM:SS+HH:MM.md`
+- **パス**: `.agent/.draft/draft_YYYY-MM-DD.md`
 - **使用法**: `## Prompt` セクションを編集してエージェントに指示します。

@@ -1,5 +1,5 @@
 ---
-description: Create a new prompt draft with a timestamped filename
+description: Create a new prompt draft with a date-based filename
 ---
 
 # Create Prompt Draft Workflow
@@ -15,9 +15,9 @@ Generate a new Markdown draft file in `.agent/.draft/` for writing AI instructio
    ```
 
 2. **Generate File**
-   Run the following to create a timestamped draft:
+   Run the following to create a dated draft:
    ```bash
-   cat > .agent/.draft/draft_$(date -Iseconds).md << 'EOF'
+   cat > .agent/.draft/draft_$(date +%Y-%m-%d).md << 'EOF'
    ---
    date: $(date -Iseconds)
    user: $(whoami)
@@ -32,5 +32,5 @@ Generate a new Markdown draft file in `.agent/.draft/` for writing AI instructio
    ```
 
 ## Output
-- **Path**: `.agent/.draft/draft_YYYY-MM-DDTHH:MM:SS+HH:MM.md`
+- **Path**: `.agent/.draft/draft_YYYY-MM-DD.md`
 - **Usage**: Edit the `## Prompt` section to instruct the agent.
