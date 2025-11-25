@@ -1,82 +1,156 @@
-# Web-based Image Viewer
+# 🖼️ Web-based Image Viewer
 
-> 🤖 **AI-Managed Repository**: This repository is primarily edited and managed by an AI agent named **Ai**.
+> 🤖 **AI-Managed Repository**  
+> This repository is primarily edited and managed by an AI agent named **Ai**, working in collaboration with human oversight.
 
-A premium, client-side web-based image viewer built with Vite and Vanilla JavaScript.
+---
+
+A **premium**, **client-side** web-based image viewer that prioritizes privacy and modern design aesthetics. Built with Vite and Vanilla JavaScript, this application processes all images directly in your browser—no server uploads required.
+
+---
 
 ## 🌐 Live Demo
 
-**GitHub Pages**: [https://licosp.github.io/licoimg/](https://licosp.github.io/licoimg/)
+**Experience it now**: [licosp.github.io/licoimg](https://licosp.github.io/licoimg/)
+
+---
 
 ## 📦 Repository Structure (Monorepo)
 
-This repository manages multiple projects/components in a single repository:
+This repository follows a **monorepo structure**, managing multiple interconnected projects:
 
-- **Main Project**: Web-based Image Viewer (application)
-- **AI Agent System**: `.agent/` directory containing workflows, rules, and localized prompts
+| Component | Description |
+|-----------|-------------|
+| 🖼️ **Main Project** | Web-based Image Viewer application |
+| 🤖 **AI Agent System** | `.agent/` directory with workflows, rules, and localized prompts |
+
+---
 
 ## ✨ Features
 
-### Application Features
-- **Drag & Drop**: Easily load images by dragging them onto the page
-- **Gallery View**: View your images in a responsive grid layout
-- **Lightbox**: Detailed view with zoom and pan capabilities
-- **Privacy Focused**: All processing happens in your browser. No images are uploaded to any server
+### 🎨 Application Features
 
-### Technical Features
-- Client-side only operation
-- Modern CSS with CSS Variables
-- Responsive design
-- Code formatting with Prettier
+- **🖱️ Drag & Drop**  
+  Effortlessly load images by dragging them onto the page
+
+- **🖼️ Gallery View**  
+  Browse your images in a beautiful, responsive grid layout
+
+- **🔍 Lightbox Mode**  
+  Detailed viewing experience with smooth zoom and pan capabilities
+
+- **🔒 Privacy Focused**  
+  All image processing happens locally in your browser  
+  *Zero uploads. Zero tracking. Complete privacy.*
+
+### ⚙️ Technical Features
+
+- ✅ **Client-side only** operation
+- ✅ Modern **CSS Variables** for theming
+- ✅ Fully **responsive** design
+- ✅ **Prettier** code formatting
+
+---
 
 ## 🛠️ Technology Stack
 
-- **Framework**: Vite
-- **Language**: Vanilla JavaScript
-- **Styling**: CSS with CSS Variables
-- **Deployment**: GitHub Pages (`docs/` folder)
-- **Code Formatting**: Prettier
+| Technology | Purpose |
+|------------|---------|
+| **Vite** | Build tool and development server |
+| **Vanilla JavaScript** | Core application logic |
+| **CSS Variables** | Dynamic styling and theming |
+| **GitHub Pages** | Deployment (from `docs/` folder) |
+| **Prettier** | Code formatting and consistency |
+
+---
 
 ## 🤖 AI Agent System
 
-The `.agent/` directory contains:
+The `.agent/` directory powers the **AI-human collaborative workflow**:
 
-- **Rules** (`/.agent/rules/`): Agent code of conduct and coding conventions
-- **Workflows** (`/.agent/workflows/`): Automated workflows for commits, localization, and draft creation
-- **Localized Prompts** (`/.agent/locales/ja/`): Japanese translations of rules and workflows
+### 📂 Directory Structure
 
-### Development Process
+```
+.agent/
+├── rules/               # Agent code of conduct and conventions
+├── workflows/           # Automated workflows (commit, localization, etc.)
+├── locales/ja/          # Japanese translations
+└── .draft/              # Working drafts and planning documents
+```
 
-This project follows an AI-human collaborative development approach:
+### 🔄 Development Workflow
 
-1. Human defines requirements and provides feedback
-2. AI agent (Ai) implements changes following defined rules and workflows
-3. Changes are reviewed and committed using structured workflows
+Our development process follows a structured **AI-human collaboration model**:
+
+1. **👤 Human** → Defines requirements and provides feedback
+2. **🤖 AI Agent (Ai)** → Implements changes following defined rules
+3. **🔄 Review** → Changes are reviewed using structured workflows
+4. **✅ Commit** → Approved changes are committed with atomic, descriptive messages
+
+### 📋 Key Workflows
+
+- **`commit.md`** - Structured commit process with atomic changesets
+- **`localize-prompts.md`** - English → Japanese translation workflow
+- **`refine-instructions.md`** - Instruction clarity improvement
+- **`beautify-markdown.md`** - Document beautification for human readability
+
+---
 
 ## 🚀 Getting Started
 
-1. Install dependencies:
+### Prerequisites
 
+- **Node.js** (v14 or higher)
+- **npm** or **yarn**
+
+### Installation & Development
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/licosp/licoimg.git
+   cd licoimg
+   ```
+
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-2. Start the development server:
-
+3. **Start development server**
    ```bash
    npm run dev
    ```
+   
+   Open your browser at the URL displayed in the terminal (usually `http://localhost:5173`)
 
-3. Open your browser at the URL shown in the terminal
-
-4. Build for production:
-
+4. **Build for production**
    ```bash
    npm run build
    ```
+   
+   Production files will be generated in the `docs/` directory
+
+---
 
 ## 👤 Developer
 
-- **Name**: licosp
-- **GitHub**: [https://github.com/licosp](https://github.com/licosp)
-- **X (Twitter)**: [https://x.com/licospx](https://x.com/licospx)
+**licosp**
+
+- 🌐 **GitHub**: [github.com/licosp](https://github.com/licosp)
+- 🐦 **X (Twitter)**: [@licospx](https://x.com/licospx)
+
+---
+
+## 📄 License
+
+This project is open source. Please check the repository for license details.
+
+---
+
+<div align="center">
+
+**Made with ❤️ by AI-Human Collaboration**
+
+*Powered by Ai 🤖 × Human Creativity 👤*
+
+</div>
