@@ -42,6 +42,7 @@ After translation, verify the following:
 - Translation preserves the original meaning and intent
 - Markdown formatting remains intact
 - Terminology is consistent across related documents
+- Clean up destination directory by removing files/directories that exist in destination but not in source
 
 ## Guidelines
 Refer to `.agent/rules/core/localization.md` for detailed translation standards.

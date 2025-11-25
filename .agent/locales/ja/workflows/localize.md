@@ -42,6 +42,7 @@ mkdir -p .agent/{rules,workflows} .agent/locales/ja/{rules,workflows}
 - 翻訳が元の意味と意図を保持していること
 - Markdownフォーマットがそのまま保持されていること
 - 関連ドキュメント全体で用語が一貫していること
+- 宛先ディレクトリには存在するがソースディレクトリには存在しないファイル/ディレクトリを削除してクリーンアップすること
 
 ## ガイドライン
 詳細な翻訳標準については`.agent/rules/core/localization.md`を参照してください。
