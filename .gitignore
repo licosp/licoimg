@@ -1,21 +1,5 @@
-# Logs
-logs
-*.log
-npm-debug.log*
+# Python
+.venv/
 
+# Yarn
 node_modules
-/dist
-*.local
-
-# Editor directories and files
-.idea
-.DS_Store
-*.sw?
-
-# Allow agent directory
-!.agent/
-!.agent/logs/
-
-# Temp directory
-.temp/*
-!.temp/.gitkeep
