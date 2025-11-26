@@ -14,3 +14,4 @@ node_modules
 
 # Allow agent directory
 !.agent/
+!.agent/logs/
