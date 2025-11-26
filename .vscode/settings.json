@@ -2,19 +2,7 @@
   // ! Prioritize "settings.json"
   // * VSCode
   // Other
-  "explorer.excludeGitIgnore": false,
-  "workbench.startupEditor": "none",
-  "workbench.colorTheme": "Elaina"
-  
-  // Font
-  "editor.fontFamily": "UDEV Gothic JPDOC",
-
   // Editor
-  "editor.minimap.enabled": false,
-  "editor.renderWhitespace": "all",
-  "editor.rulers": [79],
-
-  // Save
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit",
     "source.fixAll.shellcheck": "explicit"
@@ -24,12 +12,6 @@
   // * Outside tools
   // Python
   "python.analysis.diagnosticMode": "workspace",
-  "python.analysis.extraPaths": [
-    "packages/pyspartadevc/src",
-    "packages/pyspartaimg/src",
-    "packages/pyspartalib/src",
-    "packages/pyspartawsl/src"
-  ],
   "python.analysis.typeCheckingMode": "strict",
 
   // Prettier
