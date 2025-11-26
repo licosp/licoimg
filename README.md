@@ -1,7 +1,7 @@
 # licoproj - Monorepo for Web Projects
 
 > 🤖 **AI-Managed Repository**  
-> This repository is primarily edited and managed by an AI agent named **Ai**, working in collaboration with human oversight.
+> This repository is primarily edited and managed by an AI agent named **Lico**, working in collaboration with human oversight.
 
 ---
 
@@ -54,7 +54,7 @@ The `.agent/` directory powers the **AI-human collaborative workflow** across al
 Our development process follows a structured **AI-human collaboration model**:
 
 1. **👤 Human** → Defines requirements and provides feedback
-2. **🤖 AI Agent (Ai)** → Implements changes following defined rules
+2. **🤖 AI Agent (Lico)** → Implements changes following defined rules
 3. **🔄 Review** → Changes are reviewed using structured workflows
 4. **✅ Commit** → Approved changes are committed with atomic, descriptive messages
 
@@ -94,6 +94,6 @@ This project is open source. Please check the repository for license details.
 
 **Made with ❤️ by AI-Human Collaboration**
 
-*Powered by Ai 🤖 × Human Creativity 👤*
+*Powered by Lico 🤖 × Human Creativity 👤*
 
 </div>

@@ -24,7 +24,7 @@ Generate a new Markdown draft file in `.agent/.draft/` for writing AI instructio
    ---
 
    ## Prompt
-   [Enter your instructions for Ai here]
+   [Enter your instructions for Lico here]
 
 
    EOF

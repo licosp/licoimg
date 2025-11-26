@@ -5,7 +5,7 @@ description: Refine and standardize AI instruction files
 # Refine Instructions Workflow
 
 ## Purpose
-Refine Markdown instruction files (`.md`) in `.agent/rules/` and `.agent/workflows/` to ensure they are clear, concise, and complete for the AI agent (Ai).
+Refine Markdown instruction files (`.md`) in `.agent/rules/` and `.agent/workflows/` to ensure they are clear, concise, and complete for the AI agent (Lico).
 
 ## Steps
 

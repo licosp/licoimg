@@ -24,7 +24,7 @@ AI向け指示書を書くための新しいMarkdownドラフトファイルを`
    ---
 
    ## Prompt
-   [Enter your instructions for Ai here]
+   [Enter your instructions for Lico here]
 
 
    EOF

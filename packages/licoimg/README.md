@@ -119,6 +119,6 @@ This project is open source. Please check the repository for license details.
 
 **Made with ❤️ by AI-Human Collaboration**
 
-*Powered by Ai 🤖 × Human Creativity 👤*
+*Powered by Lico 🤖 × Human Creativity 👤*
 
 </div>

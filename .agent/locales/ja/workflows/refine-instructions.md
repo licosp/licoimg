@@ -5,7 +5,7 @@ description: AI指示ファイルを洗練し標準化する
 # Refine Instructions ワークフロー
 
 ## 目的
-`.agent/rules/`と`.agent/workflows/`内のMarkdown指示ファイル（`.md`）を洗練し、AIエージェント（Ai）にとって明確、簡潔、完全であることを確保します。
+`.agent/rules/`と`.agent/workflows/`内のMarkdown指示ファイル（`.md`）を洗練し、AIエージェント（Lico）にとって明確、簡潔、完全であることを確保します。
 
 ## ステップ
 
