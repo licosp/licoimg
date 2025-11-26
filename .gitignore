@@ -15,3 +15,7 @@ node_modules
 # Allow agent directory
 !.agent/
 !.agent/logs/
+
+# Temp directory
+.temp/*
+!.temp/.gitkeep
