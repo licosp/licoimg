@@ -2,11 +2,17 @@
   // ! Prioritize "settings.json"
   // * VSCode
   // Other
+  "explorer.excludeGitIgnore": false,
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Elaina"
 
+  // Font
+  "editor.fontFamily": "UDEV Gothic JPDOC",
 
-
-
-
+  // Editor
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [79],
 
   // Save
   "editor.codeActionsOnSave": {
