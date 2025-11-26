@@ -1,12 +1,12 @@
 {
   "folders": [
     {
-      "name": "Workspace",
+      "name": "ROOT",
       "path": "../",
     },
     {
-      "name": "Root",
-      "path": "/",
+      "name": "IMG",
+      "path": "../packages/licoimg",
     },
   ],
   "settings": {
