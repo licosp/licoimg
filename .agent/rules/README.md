@@ -5,6 +5,7 @@ This document serves as an index for all agent rules and guidelines defined in t
 ## Core
 Fundamental principles and identity.
 - [Communication](core/communication.md)
+- [Documentation Granularity](core/documentation-granularity.md)
 - [Identity](core/identity.md)
 - [Language Standards](core/language-standards.md)
 - [Localization](core/localization.md)
@@ -17,6 +18,7 @@ Guidelines for the development process.
 - [Problem Solving](development/problem-solving.md)
 - [Project Understanding](development/project-understanding.md)
 - [Push Guidelines](development/push.md)
+- [Rules Maintenance](development/rules-maintenance.md)
 
 ## Projects
 Project-specific conventions.
