@@ -165,7 +165,40 @@ git rev-parse --is-inside-work-tree &> /dev/null || exit 1
 - **Body**: Summary, Changes, Purpose
 - **Labels**: Match commit type (`feat`, `fix`, etc.)
 
-#### 4.4 Idempotency
+#### 4.4 Issue Comment Format
+**MUST** write all Issue comments in English and AI-optimized format:
+
+**Rationale**: GitHub Issues serve as AI reference for chronological thought tracking. Comments must be readable by AI agents in future sessions.
+
+**Language**: English only
+- AI agents think in English (ref: `core/identity.md`)
+- Cross-session context requires consistent language
+- Human-facing documents should be in `.human/` directories
+
+**Format Requirements**:
+- Use markdown for structure (headers, lists, code blocks)
+- Include timestamps in ISO 8601 format when relevant
+- Reference files with absolute paths or relative from repo root
+- Explain "why" changes were made, not just "what"
+
+**Example**:
+```markdown
+## Commit History (2025-11-29T19:27+09:00)
+
+Completed 6 atomic commits following `commit-granularity.md` guidelines:
+
+- `b2c3e89` docs(draft): update draft with conversation history
+- `0c49074` chore(config): update .gitignore to track rule files
+
+**Summary**: Added conversation logs and updated config files.
+**Next Steps**: Add pre-push documentation rule.
+```
+
+**Re-posting**: If a comment needs correction, post a new comment with:
+- **Note** explaining why re-posting
+- Corrected content
+- Do NOT delete original comment (preserves chronology)
+#### 4.5 Idempotency
 - **MUST** handle existing resources gracefully
 - **MUST** check if branch already exists before creating
 - **MUST** verify issue creation success before proceeding
@@ -241,6 +274,43 @@ git show HEAD
 - **Amend**: `git commit --amend` (if not yet pushed)
 - **Reset**: `git reset HEAD~1` (if not yet pushed)
 - **Revert**: `git revert <commit>` (if already pushed)
+
+---
+---
+
+### 8. Pre-Push Documentation
+
+#### 8.1 Issue Comment Requirement
+**MUST** document commit history on GitHub Issue before pushing:
+
+1. **Generate commit summary**:
+   ```bash
+   git log --oneline origin/<branch>..HEAD --pretty=format:"- %h %s"
+   ```
+
+2. **Post to Issue**:
+   ```bash
+   # Using gh CLI with full path
+   .agent/runtimes/gh_2.40.1_linux_amd64/bin/gh issue comment <issue-number> --body-file <summary-file>
+   # OR manually via GitHub web UI
+   ```
+
+3. **Verify comment posted**:
+   ```bash
+   .agent/runtimes/gh_2.40.1_linux_amd64/bin/gh issue view <issue-number>
+   ```
+
+#### 8.2 Push Execution
+**MUST** push after documenting commits:
+```bash
+git push origin <branch-name>
+```
+
+#### 8.3 Rationale
+- **Traceability**: Links commits to Issue discussion
+- **Audit Trail**: Provides historical record of work completed
+- **Collaboration**: Informs team members of progress
+- **Migration Support**: Preserves commit history if moving to different hosting service
 
 ---
 
