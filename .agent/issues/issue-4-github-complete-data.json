@@ -16,7 +16,7 @@
     "number": 4,
     "title": "Improve Workspace Tooling and Development Environment",
     "state": "OPEN",
-    "body": "Enhance workspace tooling with better linting, formatting, and development workflows. Implement comprehensive tooling for consistent code quality and developer experience.",
+    "body": "リポジオリのローカル↔リモートの同期です",
     "author": {
       "login": "licosp",
       "id": "MDQ6VXNlcjE2MTU0MzE=",

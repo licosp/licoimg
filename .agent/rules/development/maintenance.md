@@ -66,6 +66,29 @@ If hook files must differ:
 2. Create separate rule files for divergent requirements
 3. Maintain synchronization for all common content
 
+## Implementation Plan Standards (Dual-Plan Workflow)
+
+### Concept
+Separate "AI thinking process" from "Human review documents" to optimize for both efficiency and readability.
+
+### 1. AI Internal Plan (Working Memory)
+- **Location**: `.gemini/.../implementation_plan.md` (Hidden/Ephemeral)
+- **Format**: Optimized for AI (English, concise, technical)
+- **Purpose**: Task tracking and context maintenance for the agent.
+
+### 2. Human Review Plan (Deliverable)
+- **Location**: `.human/plans/YYYY-MM-DDTHH-MM-SS+09-00_implementation_plan.md`
+- **Format**: **Strictly adhering to Code of Conduct** (Japanese, human-readable, formatted)
+- **Purpose**: User review, approval, and project history.
+- **Requirement**: MUST be created and presented to the user for any complex task.
+
+## Interrupted Task Recording
+
+### Policy
+- When a task is interrupted or suspended, it MUST be recorded to preserve context.
+- **Location**: `.human/tasks/YYYY-MM-DDTHH-MM-SS+09-00_interrupted-tasks.md`
+- **Content**: Summary of task, reason for interruption, and requirements for resumption.
+
 ## Issue Archival Standards
 
 ### Purpose

@@ -9,11 +9,17 @@ export default [
       globals: {
         console: 'readonly',
         process: 'readonly',
+        module: 'readonly',
+        require: 'readonly',
+        exports: 'readonly',
+        __dirname: 'readonly',
+        __filename: 'readonly',
       },
     },
     rules: {
       'no-unused-vars': 'warn',
       'no-console': 'off',
+      'no-undef': 'off', // Allow Node.js globals
     },
   },
 ];
