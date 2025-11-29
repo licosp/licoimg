@@ -1,13 +1,9 @@
 {
-  // ! Prioritize "settings.json"
   // * VSCode
   // Other
+  "terminal.integrated.defaultProfile.linux": "bash",
   "explorer.excludeGitIgnore": false,
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "Elaina"
-
-  // Font
-  "editor.fontFamily": "UDEV Gothic JPDOC",
 
   // Editor
   "editor.minimap.enabled": false,
@@ -69,5 +65,43 @@
   "[shellscript]": { "editor.defaultFormatter": "foxundermoon.shell-format" },
 
   // Python
-  "[python]": {    "editor.defaultFormatter": "charliermarsh.ruff"  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
+
+  // Other
+  "explorer.confirmDragAndDrop": false,
+  "extensions.ignoreRecommendations": false,
+  "workbench.editor.enablePreview": true,
+
+  // Test
+  "testing.automaticallyOpenTestResults": "neverOpen",
+  "testing.gutterEnabled": true,
+
+  // Git
+  "git.autoRepositoryDetection": "openEditors",
+  "git.inputValidation": true,
+
+  // TD Tree
+  "todo-tree.filtering.includedWorkspaces": ["."],
+
+  // ShellCheck
+  "shellcheck.logLevel": "debug",
+
+  // shfmt
+  "shellformat.useEditorConfig": true,
+
+  // Bash IDE
+  "bashIde.logLevel": "debug",
+  "bashIde.shellcheckPath": "", // Disable lint
+  "bashIde.shfmt.path": "", // Disable format
+
+  // Python
+  "python.languageServer": "Pylance",
+
+  // Docstring
+  "autoDocstring.docstringFormat": "google",
+
+  // Ruff
+  "ruff.configuration": "pyproject.toml"
 }
