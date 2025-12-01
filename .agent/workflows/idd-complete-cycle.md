@@ -5,42 +5,68 @@ description: Complete workflow for one full Issue-Driven Development (IDD) cycle
 # Issue-Driven Development: Complete Cycle
 
 ## Overview
-This workflow defines the complete lifecycle of one IDD cycle, from issue creation to closure.
+IDD (Issue-Driven Development) is structured into **3 main phases**:
+1. **Initialization** (開始処理): Prepare the work environment
+2. **Implementation** (イシューのテーマの実現): Achieve the issue's goal
+3. **Finalization** (終了処理): Integrate and close the issue
 
 ---
 
-## Phase 1: Issue Creation & Planning
+## Phase 1: Initialization (開始処理)
 
-### 1.1 Identify Work
-- Determine what needs to be done (feature, bug fix, documentation, etc.)
-- Check if an existing issue covers this work
-
-### 1.2 Create Issue (if needed)
+### 1. Environment Verification
+**1-1. Tool Availability Check**
 ```bash
-gh issue create \
-  --title "[Type]: Brief description" \
-  --body "## Summary\n[Description]\n\n## Changes\n- [List]\n\n## Purpose\n[Why]" \
-  --label "type:feat" # or fix, docs, etc.
+# Check required tools
+command -v gh &> /dev/null || echo "Error: GitHub CLI not installed"
+command -v git &> /dev/null || echo "Error: Git not installed"
 ```
 
-**Format Requirements** (ref: `git-operations.md` §4.3):
-- **Title**: `[Type]: [Short Description]`
+**1-2. Authentication Status**
+```bash
+gh auth status || echo "Error: Not authenticated. Run 'gh auth login'"
+```
+
+### 2. Theme Design
+**2-1. Define Main Theme**
+- Identify the primary goal of the issue (e.g., "Add pre-task assessment protocol")
+- Ensure the theme is clear and focused
+
+**2-2. Identify Sub-Themes**
+- List changes unrelated to the main theme but necessary for synchronization
+- Examples: Draft updates, `.gitignore` adjustments, typo fixes
+- **Note**: Sub-themes will be committed separately (ref: `commit-granularity.md`)
+
+### 3. Issue Creation
+**3-1. Prepare Issue Elements**
+- **Title**: `[Type]: Brief description` (e.g., `[Feat]: Add pre-task assessment`)
 - **Body**: Summary, Changes, Purpose
+- **Assignees**: Assign to yourself or team members
 - **Labels**: Match commit type (`feat`, `fix`, `docs`, etc.)
 
-### 1.3 Record Issue Number
+**3-2. Create Issue**
+```bash
+gh issue create \
+  --title "[Feat]: Add pre-task assessment protocol" \
+  --body "## Summary\n...\n\n## Changes\n...\n\n## Purpose\n..." \
+  --label "type:feat"
+```
+
+**3-3. Record Issue Number**
 ```bash
 ISSUE_NUMBER=$(gh issue list --limit 1 --json number --jq '.[0].number')
 echo "Working on Issue #$ISSUE_NUMBER"
 ```
 
----
-
-## Phase 2: Branch Creation & Development
-
-### 2.1 Create Feature Branch
+### 4. Branch Creation
+**4-1. Fetch Latest Remote State**
 ```bash
-git checkout -b ${ISSUE_NUMBER}-brief-description-kebab-case
+git fetch origin
+```
+
+**4-2. Create Local Branch from Remote Main**
+```bash
+git checkout -b ${ISSUE_NUMBER}-brief-description-kebab-case origin/main
 ```
 
 **Naming Convention** (ref: `git-operations.md` §3.1):
@@ -48,100 +74,146 @@ git checkout -b ${ISSUE_NUMBER}-brief-description-kebab-case
 - Language: English
 - Length: ~50 characters
 
-### 2.2 Develop & Commit
-Follow atomic commit principles:
-- Run `git status` and `git diff --stat` before committing
-- Stage only related changes: `git add <files>`
-- Verify staging: `git diff --cached --stat`
-- Commit with conventional format: `git commit -m "type(scope): description"`
+**4-3. Push Branch and Set Upstream Tracking**
+```bash
+git push -u origin ${ISSUE_NUMBER}-brief-description-kebab-case
+```
 
-**Commit Standards** (ref: `git-operations.md` §1-2):
-- Use Conventional Commits format
-- Keep commits atomic (1 logical change per commit)
-- Write clear, imperative descriptions
+### 5. Initial State Verification
+**5-1. Check Current Branch Status**
+```bash
+git status
+```
 
-### 2.3 Iterate
-Repeat 2.2 until all planned work is complete.
+**5-2. Verify Feasibility**
+- Confirm that main theme and sub-themes can be implemented
+- Check for potential conflicts or blockers
+
+### 6. Early Problem Detection
+**6-1. Identify Issues**
+- List any problems discovered during verification
+- Document technical constraints or dependencies
+
+**6-2. Record in Issue Comments**
+```bash
+gh issue comment ${ISSUE_NUMBER} --body "## Initial Assessment\n- Problem: ...\n- Solution: ..."
+```
+
+**6-3. Backup Issue Locally**
+```bash
+gh issue view ${ISSUE_NUMBER} --json title,body,comments > .agent/issues/issue-${ISSUE_NUMBER}-backup.json
+```
 
 ---
 
-## Phase 3: Pre-Push Documentation
+## Phase 2: Implementation (イシューのテーマの実現)
 
-### 3.1 Generate Commit Summary
+### Development Cycle
+Repeat the following until all planned work is complete:
+
+**1. Make Changes**
+- Implement features, fix bugs, or update documentation
+- Focus on one logical change at a time
+
+**2. Stage Changes**
+```bash
+git add <files>
+```
+
+**3. Verify Staging**
+```bash
+git diff --cached --stat
+git diff --cached
+```
+
+**4. Commit**
+```bash
+git commit -m "type(scope): description"
+```
+
+**Commit Standards** (ref: `git-operations.md` §1-2, `commit-granularity.md`):
+- Use Conventional Commits format
+- Keep commits atomic (1 logical change per commit)
+- Commit main theme and sub-themes **separately**
+- Commit frequently (especially for drafts and logs)
+
+**5. Iterate**
+- Continue until all main theme and sub-theme work is complete
+
+---
+
+## Phase 3: Finalization (終了処理)
+
+### 1. Pre-Push Documentation
+**1-1. Generate Commit Summary**
 ```bash
 git log --oneline origin/main..HEAD --pretty=format:"- \`%h\` %s" > /tmp/commit-summary.md
 ```
 
-### 3.2 Add Context to Summary
-Edit `/tmp/commit-summary.md` to add:
+**1-2. Add Context**
+Edit `/tmp/commit-summary.md` to include:
 - Timestamp (ISO 8601 format)
 - Brief summary of changes
 - Next steps (if applicable)
 
 **Example**:
 ```markdown
-## Commit History (2025-12-01T02:30+09:00)
+## Commit History (2025-12-01T10:45+09:00)
 
-Completed 3 atomic commits:
+Completed 5 atomic commits:
 
-- `a1b2c3d` feat(rules): add pre-task assessment protocol
-- `e4f5g6h` docs(rules): define 3-layer memory architecture
-- `i7j8k9l` docs: update daily draft with session notes
+- \`a1b2c3d\` feat(rules): add pre-task assessment protocol
+- \`b2c3d4e\` docs(rules): update commit granularity philosophy
+- \`c3d4e5f\` docs(workflow): add IDD complete cycle
+- \`d4e5f6g\` docs: update daily draft with IDD discussion
+- \`e5f6g7h\` chore: update .gitignore
 
-**Summary**: Added behavioral rules for task assessment and memory management.
+**Summary**: Added behavioral rules and workflows for IDD cycle.
 **Next Steps**: Create PR and merge to main.
 ```
 
-### 3.3 Post to Issue
+**1-3. Post to Issue**
 ```bash
 gh issue comment ${ISSUE_NUMBER} --body-file /tmp/commit-summary.md
 ```
 
-### 3.4 Verify Comment
+**1-4. Verify Comment**
 ```bash
 gh issue view ${ISSUE_NUMBER}
 ```
 
----
-
-## Phase 4: Push & Pull Request
-
-### 4.1 Push Branch
+### 2. Push Branch
 ```bash
 git push origin ${ISSUE_NUMBER}-brief-description-kebab-case
 ```
 
-### 4.2 Create Pull Request
+### 3. Create Pull Request
 ```bash
 gh pr create \
   --title "Brief description of changes" \
-  --body "Closes #${ISSUE_NUMBER}.\n\n## Changes\n- [List of changes]\n\n## Testing\n- [How to verify]" \
+  --body "Closes #${ISSUE_NUMBER}.\n\n## Changes\n- [List]\n\n## Testing\n- [Verification steps]" \
   --base main \
   --head ${ISSUE_NUMBER}-brief-description-kebab-case
 ```
 
-**PR Body Requirements**:
+**PR Requirements**:
 - Include `Closes #<issue-number>` to auto-close issue on merge
 - Use **relative paths only** (security requirement)
-- Summarize changes clearly
-- Include testing/verification steps if applicable
+- Summarize main theme and sub-themes clearly
 
-### 4.3 Record PR Number
+**Record PR Number**:
 ```bash
 PR_NUMBER=$(gh pr list --head ${ISSUE_NUMBER}-brief-description-kebab-case --json number --jq '.[0].number')
 echo "Created PR #$PR_NUMBER"
 ```
 
----
-
-## Phase 5: Review & Merge
-
-### 5.1 Review (if needed)
+### 4. Review & Merge
+**4-1. Review (if needed)**
 - Human reviewer checks changes
 - CI/CD runs automated tests (if configured)
 - Address feedback with additional commits if needed
 
-### 5.2 Merge Pull Request
+**4-2. Merge Pull Request**
 ```bash
 gh pr merge ${PR_NUMBER} --squash --delete-branch
 ```
@@ -152,74 +224,81 @@ gh pr merge ${PR_NUMBER} --squash --delete-branch
 - `--rebase`: Rebase and merge
 - `--delete-branch`: Auto-delete remote branch after merge
 
----
-
-## Phase 6: Local Cleanup
-
-### 6.1 Switch to Main
+### 5. Local Cleanup
+**5-1. Switch to Main**
 ```bash
 git checkout main
 ```
 
-### 6.2 Pull Latest Changes
+**5-2. Pull Latest Changes**
 ```bash
 git pull origin main
 ```
 
-### 6.3 Delete Local Branch
+**5-3. Delete Local Branch**
 ```bash
 git branch -d ${ISSUE_NUMBER}-brief-description-kebab-case
 ```
 
-**Note**: Remote branch is already deleted by `--delete-branch` flag in merge.
-
----
-
-## Phase 7: Issue Closure Verification
-
-### 7.1 Verify Auto-Closure
+### 6. Issue Closure Verification
+**6-1. Verify Auto-Closure**
 ```bash
 gh issue view ${ISSUE_NUMBER}
 ```
 
-**Expected**: Status should be "Closed" (auto-closed by PR merge due to `Closes #` in PR body).
+**Expected**: Status should be "Closed" (auto-closed by PR merge).
 
-### 7.2 Manual Closure (if needed)
-If issue is not auto-closed:
+**6-2. Manual Closure (if needed)**
 ```bash
 gh issue close ${ISSUE_NUMBER} --comment "Completed via PR #${PR_NUMBER}"
 ```
 
 ---
 
-## Phase 8: Next Cycle
+## Phase 4: Next Cycle
 
-### 8.1 Identify Next Work
-- Review open issues: `gh issue list`
-- Select next issue or create new one
+### Start New Work
+**1. Identify Next Issue**
+```bash
+gh issue list
+```
 
-### 8.2 Start New Cycle
-Return to **Phase 1** with new issue.
+**2. Return to Phase 1**
+Begin a new IDD cycle with the next issue.
 
 ---
 
 ## Quick Reference Checklist
 
-- [ ] **Phase 1**: Create/identify issue
-- [ ] **Phase 2**: Create branch, develop, commit
-- [ ] **Phase 3**: Document commits on issue
-- [ ] **Phase 4**: Push branch, create PR
-- [ ] **Phase 5**: Review and merge PR
-- [ ] **Phase 6**: Clean up local workspace
-- [ ] **Phase 7**: Verify issue closure
-- [ ] **Phase 8**: Start next cycle
+### Phase 1: Initialization
+- [ ] Verify tools and authentication
+- [ ] Define main theme and sub-themes
+- [ ] Create issue
+- [ ] Create branch from `origin/main`
+- [ ] Push branch and set upstream
+- [ ] Verify feasibility
+- [ ] Document problems (if any)
+
+### Phase 2: Implementation
+- [ ] Make changes
+- [ ] Stage and verify
+- [ ] Commit (atomic, frequent)
+- [ ] Repeat until complete
+
+### Phase 3: Finalization
+- [ ] Generate commit summary
+- [ ] Post to issue
+- [ ] Push branch
+- [ ] Create PR
+- [ ] Review and merge
+- [ ] Clean up local workspace
+- [ ] Verify issue closure
 
 ---
 
 ## Error Handling
 
 ### Missing Tools
-If `gh` CLI is not available:
 ```bash
 command -v gh &> /dev/null || echo "Error: GitHub CLI not installed"
 ```
@@ -230,7 +309,7 @@ gh auth status || echo "Error: Not authenticated. Run 'gh auth login'"
 ```
 
 ### Merge Conflicts
-If conflicts occur during merge:
+If conflicts occur:
 1. Stop work immediately
 2. Create conflict resolution plan (ref: `git-operations.md` §5.2)
 3. Resolve conflicts manually
@@ -240,5 +319,9 @@ If conflicts occur during merge:
 
 ## References
 - `git-operations.md` - Git standards and conventions
+- `commit-granularity.md` - Atomic commit philosophy
 - `prepare-commit.md` - Pre-commit preparation workflow
 - [GitHub CLI Documentation](https://cli.github.com/manual/)
+
+---
+*Generated by Lico (Model: Claude 3.5 Sonnet) on 2025-12-01*
