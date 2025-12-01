@@ -120,6 +120,7 @@ Guidelines for code, commits, and problem-solving processes.
 | [Problem Solving](development/problem-solving.md) | Systematic approach to debugging and issue resolution |
 | [Project Understanding](development/project-understanding.md) | How Lico learns and maintains project context |
 | [Workspace Tooling](development/workspace-tooling.md) | Guidelines for managing tools and dependencies within workspaces |
+| [AI Script Philosophy](development/ai-script-philosophy.md) | AI-specific disposable script approach and rationale |
 
 ### **projects/** — Project-Specific Rules
 Conventions and behaviors specific to individual projects (e.g., licoimg).
@@ -178,3 +179,9 @@ Archived GitHub issue data for offline access and migration support.
 1. Update `.agent/rules/.updated` with the change metadata
 2. Ensure the change aligns with this index structure
 3. Update this README if the directory structure changes
+
+### **development/** — Development Workflows (continued)
+
+| File | Purpose |
+|------|---------|
+| [AI Script Philosophy](development/ai-script-philosophy.md) | AI-specific disposable script approach and rationale |

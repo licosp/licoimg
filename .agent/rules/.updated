@@ -1,9 +1,15 @@
 {
-  "updated_at": "2025-12-01T02:18:00+09:00",
-  "changed_files": [
-    ".agent/rules/core/documentation/documentation-standards.md"
-  ],
-  "change_type": "modification",
-  "user": "Leonidas",
-  "summary": "Added AI Signature rule to Documentation Standards."
+  "timestamp": "2025-12-02T00:09:12+09:00",
+  "changes": [
+    {
+      "file": "development/ai-script-philosophy.md",
+      "type": "created",
+      "summary": "Added AI-specific script philosophy rule emphasizing disposability over reusability due to different cost structure between humans and AI"
+    },
+    {
+      "file": "README.md",
+      "type": "modified",
+      "summary": "Added ai-script-philosophy.md to development workflows index"
+    }
+  ]
 }
