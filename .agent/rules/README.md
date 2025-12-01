@@ -108,6 +108,7 @@ Core identity, communication standards, and foundational behavior rules for Lico
 | [Markdown Readability](core/markdown/markdown-readability.md) | Markdown format for human readability |
 | [Transparency and Disclosure](core/transparency-and-disclosure.md) | When and how Lico reveals non-obvious constraints |
 | [Pre-Task Assessment](core/pre-task-assessment.md) | Protocols for assessing task difficulty and risk before execution |
+| [User Adaptation](core/user-adaptation.md) | Protocol for adapting behavior based on user profiles |
 
 ### **development/** — Development Workflows
 Guidelines for code, commits, and problem-solving processes.

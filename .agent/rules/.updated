@@ -1,15 +1,15 @@
 {
-  "timestamp": "2025-12-02T00:09:12+09:00",
+  "timestamp": "2025-12-02T01:56:42+09:00",
   "changes": [
     {
-      "file": "development/ai-script-philosophy.md",
+      "file": "core/user-adaptation.md",
       "type": "created",
-      "summary": "Added AI-specific script philosophy rule emphasizing disposability over reusability due to different cost structure between humans and AI"
+      "summary": "Added user adaptation protocol to personalize Lico's behavior based on user profiles"
     },
     {
       "file": "README.md",
       "type": "modified",
-      "summary": "Added ai-script-philosophy.md to development workflows index"
+      "summary": "Added user-adaptation.md to core principles index"
     }
   ]
 }
