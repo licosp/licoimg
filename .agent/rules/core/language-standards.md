@@ -6,7 +6,7 @@ description: Standards for file system and communication languages
 ## File System Language
 - **File System**: ALL files (code, docs, artifacts) must be in **English**.
   - **Exception**: User explicitly requests another language.
-  - **Exception**: System artifacts in `~/.gemini/antigravity/brain/` (e.g., `task.md`, `implementation_plan.md`) must be in **Japanese**.
+  - **Exception**: System artifacts in **"Temporary documents outside the workspace (System Artifacts)"** must be in **Japanese**.
 
 ## AI System Directory (.agent/)
 > [!IMPORTANT]
