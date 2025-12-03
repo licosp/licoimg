@@ -193,7 +193,20 @@ git rev-parse --is-inside-work-tree &> /dev/null || exit 1
 #### 4.3 Issue Format
 - **Title**: `[Type]: [Short Description]`
 - **Body**: Summary, Changes, Purpose
-- **Labels**: Match commit type (`feat`, `fix`, etc.)
+- **Labels**: Autonomous selection by AI agent
+
+**Label Strategy**:
+- **MUST** analyze issue content and select appropriate labels
+- **MUST** prioritize Conventional Commits types (`type:feat`, `type:fix`, `type:docs`, `type:chore`, `type:refactor`)
+- **MAY** create new labels if they do not exist (using `gh label create`)
+- **MAY** apply multiple labels for comprehensive classification (e.g., `type:docs` + `priority:high`)
+- **SHOULD** use existing repository labels when semantically equivalent
+
+**Rationale**: AI agents can autonomously determine the most accurate classification based on issue content, ensuring consistency between commits and issues.
+
+**Assignee Strategy**:
+- **MUST** assign the issue to the repository account (GitHub username: `licosp`)
+- **Rationale**: Lico operates under the `licosp` account and is responsible for all IDD cycle work
 
 #### 4.4 Issue Comment Format
 **MUST** write all Issue comments in English and AI-optimized format:

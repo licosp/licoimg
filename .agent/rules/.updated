@@ -1,10 +1,7 @@
 {
-  "timestamp": "2025-12-03T12:51:09.351919",
+  "timestamp": "2025-12-03T16:55:08.641352",
   "files": [
-    ".agent/rules/development/ai-script-philosophy.md",
-    ".agent/rules/development/git-operations.md",
-    ".agent/rules/core/documentation/documentation-standards.md",
-    ".agent/rules/core/user-adaptation.md"
+    ".agent/rules/development/git-operations.md"
   ],
-  "reason": "Updated behavioral rules: removed exception clause from AI script philosophy, added selective staging guidelines to git operations, added file path reference standards to documentation standards, and enhanced user identification protocol in user adaptation"
+  "reason": "Updated IDD Issue Format section with autonomous label selection and assignee strategies"
 }
