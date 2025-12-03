@@ -16,22 +16,12 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "commit": "cz",
-    "prepare": "husky",
     "gh": "gh"
   },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  },
-  "lint-staged": {
-    "*.{js,ts,jsx,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,md,css,html}": [
-      "prettier --write"
-    ]
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
