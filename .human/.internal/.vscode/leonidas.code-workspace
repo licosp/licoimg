@@ -140,5 +140,7 @@
 
     // Ruff
     "ruff.configuration": "pyproject.toml",
+    "markdown-preview-github-styles.colorTheme": "light",
+    "markdown-preview-github-styles.lightTheme": "light",
   },
 }

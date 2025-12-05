@@ -16,7 +16,6 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "commit": "cz",
-    "prepare": "husky",
     "gh": "gh"
   },
   "config": {
@@ -24,19 +23,11 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "lint-staged": {
-    "*.{js,ts,jsx,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,md,css,html}": [
-      "prettier --write"
-    ]
-  },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@eslint/js": "^9.17.0",
+    "@google/gemini-cli": "^0.18.4",
     "@types/node": "^22.9.1",
     "@vitejs/plugin-vue": "^5.2.1",
     "commitizen": "^4.3.1",

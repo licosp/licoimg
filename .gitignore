@@ -122,3 +122,6 @@ playwright/.cache/
 .agent/runtimes/
 *.tar.gz
 !/.agent/rules/development/git-operations.md
+!/.agent/rules/core/*.md
+
+!/.agent/rules/proposals/

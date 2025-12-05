@@ -1,5 +1,3 @@
-[🇯🇵 日本語 (Japanese)](README.ja.md)
-
 # Lico - The Autonomous AI Agent
 
 > **"Repository as Brain"**  
@@ -81,13 +79,11 @@ Lico is designed to be autonomous but collaborative.
   - [GitHub](https://github.com/lyoutakoduka/spartaproject)
   - [X (Twitter)](https://x.com/lyouta_koduka)
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
 <div align="center">
 <br>
 <i>"The repository is the brain. The commit log is the memory. The code is the thought."</i>
 </div>
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

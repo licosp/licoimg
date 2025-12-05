@@ -1,9 +1,8 @@
 {
-  "updated_at": "2025-11-30T02:03:00+09:00",
-  "changed_files": [
+  "timestamp": "2025-12-03T21:50:32.703084",
+  "files": [
+    ".agent/rules/workflow/context-resumption.md",
     ".agent/rules/README.md"
   ],
-  "change_type": "expansion",
-  "user": "Leonidas",
-  "summary": "Added workspace context and .agent/ directory structure overview. Added session-lifecycle.md to workflow section. Enhanced quick reference with session termination and workspace structure queries."
+  "reason": "Added Context Resumption Protocol to prevent errors caused by context switching"
 }
