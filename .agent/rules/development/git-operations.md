@@ -5,6 +5,12 @@ Define comprehensive behavioral standards for all Git operations including commi
 
 ## Core Principles
 
+### 0. Commit Message Quality (HIGHEST PRIORITY)
+**MUST** write commit messages that enable complete reconstruction of project state from git log alone.
+- **Future Tracking**: Messages MUST allow Lico to understand what files contained without accessing them
+- **Self-Documenting**: Each commit MUST be understandable by future AI instances
+- **Audit Trail**: Messages MUST serve as permanent record of reasoning and implementation
+
 ### 1. Commit Atomicity and Logic
 
 #### 1.1 Logical Separation
@@ -89,13 +95,19 @@ Do NOT stage unrelated files such as:
 
 **Example**: `feat: add user authentication module`
 
-#### 2.5 Body (Optional)
+#### 2.5 Body (REQUIRED for non-trivial changes)
 - MUST be separated from description by a blank line
 - MAY consist of multiple paragraphs separated by blank lines
-- SHOULD explain:
+- MUST explain:
   - **Why** the change was made
+  - **What** files were changed and their purpose
   - **Impact** and side effects
   - **Implementation** details if complex
+
+**File Tracking Requirement**:
+- MUST list changed files with brief description of their contents/purpose
+- MUST enable future reconstruction of what each file contained
+- SHOULD use format: `- filename: brief description of contents/changes`
 
 **Example**:
 ```
@@ -105,7 +117,39 @@ This change introduces JWT-based authentication to secure API endpoints.
 The implementation uses bcrypt for password hashing and includes
 session management with automatic token refresh.
 
+Changed files:
+- src/auth/jwt-middleware.js: JWT token validation and refresh logic
+- src/auth/bcrypt-utils.js: Password hashing utilities with salt generation
+- src/models/User.js: User model with authentication fields
+- src/routes/auth.js: Login/logout/register API endpoints
+
 This affects all protected routes and requires database migration.
+```
+
+**File Tracking Examples**:
+
+*Simple file changes*:
+```
+docs: update README with setup instructions
+
+Updated project setup documentation.
+
+Changed files:
+- README.md: Added installation and configuration steps
+```
+
+*Multiple file changes*:
+```
+refactor: reorganize project structure
+
+Reorganized source code into feature-based directories for better maintainability.
+
+Changed files:
+- src/components/Button.js: Reusable button component
+- src/components/Modal.js: Modal dialog component
+- src/pages/Dashboard.js: Main dashboard page component
+- src/utils/helpers.js: Common utility functions
+- src/styles/components.css: Component-specific styles
 ```
 
 #### 2.6 Footers (Optional)
