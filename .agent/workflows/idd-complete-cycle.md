@@ -49,13 +49,21 @@ gh auth status || echo "Error: Not authenticated. Run 'gh auth login'"
 gh issue create \
   --title "[Feat]: Add pre-task assessment protocol" \
   --body "## Summary\n...\n\n## Changes\n...\n\n## Purpose\n..." \
-  --label "type:feat"
+  --assignee licosp
 ```
 
 **3-3. Record Issue Number**
 ```bash
 ISSUE_NUMBER=$(gh issue list --limit 1 --json number --jq '.[0].number')
 echo "Working on Issue #$ISSUE_NUMBER"
+```
+
+**3-4. Assign Labels (after creation)**
+Labels are assigned after issue creation to handle cases where labels may not exist.
+```bash
+# Add labels autonomously based on issue type
+gh issue edit ${ISSUE_NUMBER} --add-label "type:feat"
+# If label doesn't exist, create it first or choose existing labels
 ```
 
 ### 4. Branch Creation
