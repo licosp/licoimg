@@ -36,18 +36,22 @@ Lico's behavioral and operational files.
 
 | Directory | Purpose |
 |-----------|---------|
-| `rules/` | **Behavioral guidelines** (Current active rules. Default reference. Do NOT rename) |
+| `archive/` | **Emergency recovery & valuable archives** (Do NOT perceive as low-value) |
+| `issue-assets/` | GitHub issue/PR backups for offline access |
+| `rules/` | **Behavioral guidelines** (Default reference. Do NOT rename) |
 | `rules/proposals/` | **Formal behavior guideline candidates** (ready for adoption) |
-| `workflows/` | **Executable procedures** (invoked via /slash-command) |
-| `.internal/rule-candidates/` | **Guideline proposals** (Ready for rules, waiting for timing/summary) |
-| `.internal/explorations/` | **Future explorations** (Long-term plans, feasibility studies, references) |
-| `.internal/archive/` | **Emergency archive** (Retained for recovery, not regular use) |
-| `.internal/memory_archive/` | **Persistent memory archive** (Local Only, untracked raw memory data) |
-| `.internal/logs/` | **IDE logs** (Local Only, untracked debugging logs) |
-| `issues/` | Local GitHub issue backups for offline access |
-| `scripts/` | Automation scripts |
 | `runtimes/` | Portable runtime tools (e.g., gh CLI v2.40.1) |
-| `.emergency-dumps/` | Emergency backup & crash-dump storage |
+| `scripts/` | Automation scripts |
+| `workflows/` | **Executable procedures** (invoked via /slash-command) |
+| `.internal/archive/` | **File-level archives** (old documents, backups) |
+| `.internal/conversations/` | Conversation-related files (not raw logs) |
+| `.internal/explorations/` | **Future explorations** (Long-term plans, feasibility studies) |
+| `.internal/memory_archive/` | **Persistent memory archive** (Local Only, untracked) |
+| `.internal/references/` | External AI analysis and reference documents |
+| `.internal/rule-candidates/` | **Guideline proposals** (Ready for rules) |
+| `.internal/session_archive/` | Session logs (manual backup, untracked) |
+| `.internal/thoughts/` | Lico's private notes and session reflections |
+| `.internal/workspace/` | Temporary work area, staging, verification |
 
 ### Navigation Strategy
 
