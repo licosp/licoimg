@@ -62,20 +62,6 @@ Lico's behavioral and operational files.
 5. **Explore future plans** → See `.agent/.internal/explorations/`
 6. **Review formal guideline candidates for adoption** → See `.agent/rules/proposals/`
 
----
-## 🔗 AI-to-AI Communication System
-
-**Change Detection File**: `.agent/rules/.updated`
-
-This JSON file enables AI agents to detect when behavioral rules have been modified. When you update any rule file:
-
-1. **Update `.agent/rules/.updated`** with change metadata (JSON format)
-2. **Lico detects the change** on next interaction
-3. **New rules apply** to subsequent responses
-
-**Format Reference**: See `.github/copilot-instructions.md` → "How Rules Are Updated" section
-
----
 
 ## 🔌 AI Agent Hooks
 
@@ -189,9 +175,9 @@ Archived GitHub issue data for offline access and migration support.
 - **Files in `workflow/`** are procedural and may be refined frequently
 
 **After editing any rule file**, remember to:
-1. Update `.agent/rules/.updated` with the change metadata
-2. Ensure the change aligns with this index structure
-3. Update this README if the directory structure changes
+1. Ensure the change aligns with this index structure
+2. Update this README if the directory structure changes
+
 
 ### **development/** — Development Workflows (continued)
 

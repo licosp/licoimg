@@ -101,7 +101,7 @@ When the same task recurs:
 
 ### Rule 4: Rule Change Protocol
 
-When \`.agent/rules/.updated\` is modified:
+When behavioral rules are modified:
 1. List all scripts in \`.agent/scripts/\`
 2. For each script:
    - ✅ Still needed? Keep temporarily

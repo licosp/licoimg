@@ -22,7 +22,7 @@ The following hook files must contain identical content:
 1. **When updating rules**: Modify the primary hook file first
 2. **Immediate sync**: Copy content to all other hook files
 3. **Verification**: Ensure diff shows no differences
-4. **Documentation**: Update `.agent/rules/.updated` with synchronization note
+4. **Documentation**: Document the synchronization in commit message
 
 ### Primary Hook File
 
@@ -158,7 +158,7 @@ All file creation and modification operations must use the `.agent/.internal/wor
 **Success Path**:
 - Apply changes to production file
 - Delete intermediate file immediately
-- Update `.agent/rules/.updated` tracking
+- Document changes in commit messages
 
 **Failure Path**:
 - Move intermediate file to `.agent/.internal/archive/work/`
