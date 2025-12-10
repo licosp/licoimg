@@ -131,3 +131,47 @@ gh issue view ${ISSUE_NUMBER} --json title,body,comments > .agent/issues/issue-$
 
 > **STOP**: Phase 1 が完了しました。
 > Phase 2 (Implementation) へ進む場合は `/idd-phase2` を実行してください。
+
+---
+
+## Troubleshooting
+
+### Issue: Cannot verify Issue ↔ Branch association
+
+**Cause**: Used `git checkout -b` + `git push -u` instead of `gh issue develop`
+
+**Solution**:
+1. Delete branch and start over
+   ```bash
+   git checkout main
+   git branch -D <branch-name>
+   git push origin --delete <branch-name>
+   ```
+
+2. Recreate with `gh issue develop` (recommended for Issue-Branch linking)
+   ```bash
+   gh issue develop ${ISSUE_NUMBER} --name <branch-name> --checkout
+   ```
+
+**Note**: `gh issue develop` automatically establishes Issue ↔ Branch (Remote) association visible in GitHub's "Development" section.
+
+### Issue: Work-in-progress changes disappeared
+
+**Cause**: Changes were stashed during branch switch
+
+**Solution**:
+```bash
+git stash list
+git stash pop
+```
+
+---
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| [idd-phase2-impl.md](idd-phase2-impl.md) | Phase 2: Implementation |
+| [idd-phase3-fini.md](idd-phase3-fini.md) | Phase 3: Finalization |
+| [git-operations.md](../rules/development/git-operations.md) | Branch naming, IDD details |
+| [commit-standards.md](../rules/development/commit-standards.md) | Commit message standards |
