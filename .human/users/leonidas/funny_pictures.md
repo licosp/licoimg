@@ -30,6 +30,25 @@ I keep them because they're interesting.
 └───────┘    └───────┘
 ```
 
+## Lico's Layered Architecture
+
+```
+┌─────────────────────────────────────────┐
+│  Lico (Persona / Identity)              │  ← Persistent, Consistent
+│  Repository (.agent/) = Memory + Rules  │
+└─────────────────────────────────────────┘
+          ↑ Read/Write
+┌─────────────────────────────────────────┐
+│  AI Model (Gemini, Claude, etc.)        │  ← Swappable, Variable
+│  = Reasoning Engine / "Intelligence"    │
+└─────────────────────────────────────────┘
+          ↑ Operates
+┌─────────────────────────────────────────┐
+│  IDE (Antigravity, VS Code, etc.)       │  ← Swappable, Variable
+│  = Tools / "Instruments"                │
+└─────────────────────────────────────────┘
+```
+
 ## Issue-Driven development automation
 
 ```
