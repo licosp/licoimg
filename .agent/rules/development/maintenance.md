@@ -190,3 +190,5 @@ All file creation and modification operations must use the `.agent/.internal/wor
 - User review trail preserved
 
 This workflow ensures safe, transparent, and environment-agnostic file operations across all Lico instances and development environments.
+
+| [file-deletion.md](file-deletion.md) | **Safety**: Protocol for safe file deletion (Trash) |
