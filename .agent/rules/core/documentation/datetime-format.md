@@ -8,6 +8,16 @@ description: Standard datetime format for file naming and timestamps
 
 Standardize datetime representation across all files for consistency and sortability.
 
+## Rationale
+
+Timestamps appear in multiple contexts (frontmatter, filenames, commit messages). Inconsistent formats create ambiguity and sorting issues.
+
+**Why Japan Time (+09:00)?**
+1. **User Base**: User (lyouta) is based in Japan.
+2. **Mental Model**: Consistent with user's work hours and context.
+3. **Primary Operator**: Reflects the primary operator's timezone.
+*Note: This does NOT prevent collaboration in other timezones; the explicit offset makes conversion trivial.*
+
 ---
 
 ## Format Specification
