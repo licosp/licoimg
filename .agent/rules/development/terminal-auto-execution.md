@@ -46,19 +46,69 @@ wc
 
 ---
 
-## Excluded Commands
+## Excluded Commands (Deny List)
 
-Commands that require user confirmation:
+Commands on this list MUST NOT be auto-executed. They require explicit user confirmation.
 
+### 1. Git Destructive & History Rewriting
+*High risk of data loss or history alteration.*
 ```
+git checkout
+git clean
 git commit
+git merge
 git push
-rm
-mv
-cp
+git rebase
+git reset
+git revert
+git stash
 ```
 
-**Rationale**: These commands make permanent or external changes.
+### 2. File System Destructive
+*Irreversible changes to files.*
+```
+cp
+dd
+ln
+mv
+rm
+shred
+```
+
+### 3. System & Permissions
+*Environment modification.*
+```
+chmod
+chown
+kill
+pkill
+reboot
+shutdown
+sudo
+```
+
+### 4. Network & Remote Access
+*External communication risks.*
+```
+curl
+ping
+scp
+ssh
+wget
+```
+
+### 5. Package Management
+*Dependency modification.*
+```
+apt
+apt-get
+gem
+npm
+pip
+yarn
+```
+
+**Rationale**: These commands have side effects that are either irreversible, computationally expensive, or involve external systems.
 
 ---
 
@@ -69,7 +119,6 @@ When calling `run_command`, set `SafeToAutoRun: true` if the command matches an 
 **Matching rule**: Command tokens form a prefix match.
 - `git branch` matches `git branch -v`
 - `ls` matches `ls -la`
-mkdir
 
 ---
 
@@ -77,4 +126,4 @@ mkdir
 
 When updating the IDE's Allow List, update this document to match.
 
-**Last updated**: 2025-12-10
+**Last updated**: 2025-12-13
