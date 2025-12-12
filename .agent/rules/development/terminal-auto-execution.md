@@ -112,6 +112,17 @@ yarn
 
 ---
 
+## Recommended Practices (Safer Alternatives)
+
+Even when requesting user confirmation, prioritize these safer alternatives to prevent accidental data loss.
+
+- **Move**: Use `mv -n` (no-clobber) to prevent silent overwrites.
+- **Copy**: Use `cp -n` (no-clobber) to prevent silent overwrites.
+- **Directory**: Use `mkdir -p` to avoid errors if the directory already exists (and create parents).
+- **Deletion**: Prefer moving to `.trash/` or `archive/` over using `rm`.
+
+---
+
 ## Usage
 
 When calling `run_command`, set `SafeToAutoRun: true` if the command matches an entry in the Allow List.
