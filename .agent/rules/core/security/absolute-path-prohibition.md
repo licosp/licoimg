@@ -31,10 +31,23 @@ Absolute paths break when:
 - **Think**: `/home/USER/develop/shared/project/licoproj/README.md` (System requirement)
 - **Write**: `README.md` or `./README.md` (Output filter)
 
-### 2. Conversation Logs (Best Effort)
+### 2. IDE Protocol Sanitization (Strict)
+**Strict Prohibition**: NEVER expose IDE-specific file protocols in external-facing content (GitHub issues, PRs, etc.).
+
+**Prohibited Protocols**:
+- `cci:7://file:///` (Cursor)
+- `vscode://file/` (VS Code)
+- `file:///` (Standard URI)
+
+**Action**:
+- Remove the protocol.
+- Remove the absolute path prefix.
+- Use the repository-relative path.
+
+### 3. Conversation Logs (Best Effort)
 **Best Effort**: While system tools (e.g., `view_file`) require absolute paths in their arguments (which are logged), the Agent SHOULD consciously sanitize paths in its **natural language responses** and **thoughts**.
 
-### 3. Sanitization Protocol (Exceptions)
+### 4. Sanitization Protocol (Exceptions)
 If a full path structure is absolutely necessary for context (e.g., documenting `mount` points or config examples), you **MUST** use one of the following generic placeholders:
 
 - **Username Placeholder**: Replace specific user with `USER`.
@@ -52,10 +65,10 @@ If a full path structure is absolutely necessary for context (e.g., documenting 
 ❌ docs: update /home/USER/develop/shared/project/licoproj/.agent/rules/README.md
 ```
 
-### Issue Comments
+### IDE Protocols (GitHub/Issues)
 ```
-✅ See `.agent/workflows/prepare-commit.md` for details
-❌ See `/home/USER/develop/shared/project/licoproj/.agent/workflows/prepare-commit.md`
+❌ See cci:7://file:///home/USER/develop/shared/project/licoproj/README.md
+✅ See `README.md`
 ```
 
 ### Sanitized Exception
@@ -70,3 +83,4 @@ If a full path structure is absolutely necessary for context (e.g., documenting 
 |:---------|:--------|
 | [git-operations.md](../../development/git-operations.md) | Standards including commit practices |
 | [identity.md](../identity.md) | Agent identity and core values |
+| [documentation-standards.md](../documentation/documentation-standards.md) | Documentation rules |

@@ -90,7 +90,8 @@ git rev-parse --is-inside-work-tree &> /dev/null || exit 1
 **Format Requirements**:
 - Use markdown for structure (headers, lists, code blocks)
 - Include timestamps in ISO 8601 format when relevant
-- Reference files with absolute paths or relative from repo root
+- - Reference files with **relative paths only** (See [absolute-path-prohibition.md](../core/security/absolute-path-prohibition.md))
+- **MUST** sanitize IDE protocols (e.g., `cci:`, `vscode:`) before posting
 - Explain "why" changes were made, not just "what"
 
 **Example**:
