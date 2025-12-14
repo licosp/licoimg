@@ -67,3 +67,11 @@ These files are critical **Implicit Context**.
 3.  **Cross-Model Awareness**:
     - Recognize that drafts contain conversations with other AI models.
     - Use this to learn from their successes/failures and maintain continuity.
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| [session-lifecycle.md](../workflow/session-lifecycle.md) | Defines when to record knowledge (Handoff) |
+| [context-preservation.md](../workflow/context-preservation.md) | How to save short-term context during work |
+| [context-resumption.md](../workflow/context-resumption.md) | How to restore context when returning |

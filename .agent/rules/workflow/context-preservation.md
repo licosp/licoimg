@@ -53,3 +53,11 @@ When switching tasks, facing complex branching, or handling interruptions, the A
 ## Location
 - **Active Stash**: `.agent/.internal/workspace/`
 - **Archived Stash**: `.agent/.internal/archive/work/`
+
+## Related Documents
+
+| Document | Purpose |
+|:---------|:--------|
+| [session-lifecycle.md](session-lifecycle.md) | Defines session-level context management (Handoff) |
+| [context-resumption.md](context-resumption.md) | How to restore context after preservation |
+| [project-understanding.md](../development/project-understanding.md) | Long-term knowledge base |
