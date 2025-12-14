@@ -75,3 +75,4 @@ These files are critical **Implicit Context**.
 | [session-lifecycle.md](../workflow/session-lifecycle.md) | Defines when to record knowledge (Handoff) |
 | [context-preservation.md](../workflow/context-preservation.md) | How to save short-term context during work |
 | [context-resumption.md](../workflow/context-resumption.md) | How to restore context when returning |
+| [draft-maintenance.md](../workflow/draft-maintenance.md) | How to format and maintain Human Draft files |
