@@ -175,3 +175,21 @@ git stash pop
 | [idd-phase3-fini.md](idd-phase3-fini.md) | Phase 3: Finalization |
 | [git-operations.md](../rules/development/git-operations.md) | Branch naming, IDD details |
 | [commit-standards.md](../rules/development/commit-standards.md) | Commit message standards |
+
+### Issue: Accidentally committed to main (local)
+
+**Cause**: Started working without creating a feature branch.
+
+**Solution**:
+1. Create branch from current state (keep changes safe)
+   ```bash
+   git branch <issue-number>-<title>
+   ```
+2. Reset main to remote state (clean up mistake)
+   ```bash
+   git reset --hard origin/main
+   ```
+3. Checkout correct branch
+   ```bash
+   git checkout <issue-number>-<title>
+   ```
